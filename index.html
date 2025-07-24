@@ -40,23 +40,32 @@
   <div class="check" id="check">✔</div>
 
   <script>
+    // Lista de números de WhatsApp
     const numeros = [
       '5573991352960',
       '5573988240641'
     ];
 
+    // Recupera o índice atual ou começa do 0
     let indice = localStorage.getItem('indiceNumero');
     indice = indice ? parseInt(indice) : 0;
 
+    // Seleciona o número atual
     const numeroAtual = numeros[indice];
+
+    // Calcula o próximo índice (rotativo)
     const proximoIndice = (indice + 1) % numeros.length;
     localStorage.setItem('indiceNumero', proximoIndice);
 
-    const link = "https://wa.me/" + numeroAtual; // ✅ Forma alternativa e segura
+    // Link de redirecionamento
+    const link = https://wa.me/${numeroAtual};
 
+    // Contador e redirecionamento
     let segundos = 3;
     const contador = document.getElementById("contador");
     const check = document.getElementById("check");
+
+    contador.textContent = segundos;
 
     const interval = setInterval(() => {
       segundos--;

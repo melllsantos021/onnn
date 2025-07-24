@@ -1,17 +1,4 @@
 
-  <h1>Parabéns pelo acesso!</h1>
-  <p>Você será direcionado em segundos...</p>
-  <div class="contador" id="contador"></div>
-  <div class="check" id="check">✔</div>
-
-  <script>
-    const numeros = [
-      '5573991352960',
-      '5573988240641',
-    ];
-
-    let indice = localStorage.getItem('indiceNumero');
-    indice = indice ? parseInt(indice) : 0;
 
     const numeroAtual = numeros[indice];
     const proximoIndice = (indice + 1) % numeros.length;

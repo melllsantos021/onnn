@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>WhatsApp Redirect</title>
+  <title>Redirecionando...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background-color: #075E54;
       color: #FFFFFF;
-      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -22,7 +22,7 @@
       margin-bottom: 1rem;
     }
     .contador {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: bold;
       color: #25D366;
     }
@@ -30,6 +30,7 @@
       font-size: 4rem;
       color: #25D366;
       display: none;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -40,34 +41,36 @@
   <div class="check" id="check">✔</div>
 
   <script>
-    // Lista de números do WhatsApp
+    // Lista de números de WhatsApp
     const numeros = [
       '5573991352960',
       '5573988240641'
     ];
 
-    // Rotação de números com localStorage
+    // Índice rotativo armazenado localmente
     let indice = localStorage.getItem('indiceNumero');
     indice = indice ? parseInt(indice) : 0;
+
     const numeroAtual = numeros[indice];
     const proximoIndice = (indice + 1) % numeros.length;
     localStorage.setItem('indiceNumero', proximoIndice);
 
-    // Link com número rotativo
-    const link = "https://wa.me/" + numeroAtual;
+    const link = https://wa.me/${numeroAtual};
 
-    // Elementos
+    // Inicia contador
     let segundos = 3;
-    const contador = document.getElementById('contador');
-    const check = document.getElementById('check');
+    const contador = document.getElementById("contador");
+    const check = document.getElementById("check");
 
-    // Atualiza o cronômetro a cada segundo
-    const interval = setInterval(() => {
+    contador.textContent = segundos;
+
+    const intervalo = setInterval(() => {
       segundos--;
-      if (segundos > 0) {
+      if (segundos >= 0) {
         contador.textContent = segundos;
-      } else {
-        clearInterval(interval);
+      }
+      if (segundos === 0) {
+        clearInterval(intervalo);
         contador.style.display = 'none';
         check.style.display = 'block';
         setTimeout(() => {

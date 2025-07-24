@@ -1,18 +1,4 @@
 
-
-    const numeroAtual = numeros[indice];
-    const proximoIndice = (indice + 1) % numeros.length;
-    localStorage.setItem('indiceNumero', proximoIndice);
-
-    const link = https://wa.me/${numeroAtual};
-
-    let segundos = 3;
-    const contador = document.getElementById("contador");
-    const check = document.getElementById("check");
-
-    // Mostra o número inicial
-    contador.textContent = segundos;
-
     const interval = setInterval(() => {
       segundos--;
       if (segundos > 0) {

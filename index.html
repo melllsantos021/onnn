@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>on...</title>
+  <title>WhatsApp...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -36,13 +36,13 @@
 <body>
   <h1>Parabéns pelo acesso!</h1>
   <p>Você será direcionado em segundos...</p>
-  <div class="contador" id="contador"></div>
+  <div class="contador" id="contador">3</div>
   <div class="check" id="check">✔</div>
 
   <script>
     const numeros = [
       '5573991352960',
-      '5573988240641',
+      '5573988240641'
     ];
 
     let indice = localStorage.getItem('indiceNumero');
@@ -52,13 +52,11 @@
     const proximoIndice = (indice + 1) % numeros.length;
     localStorage.setItem('indiceNumero', proximoIndice);
 
-    const link = https://wa.me/${numeroAtual}; // ✅ Correção aqui com crase
+    const link = "https://wa.me/" + numeroAtual; // ✅ Forma alternativa e segura
 
     let segundos = 3;
     const contador = document.getElementById("contador");
     const check = document.getElementById("check");
-
-    contador.textContent = segundos;
 
     const interval = setInterval(() => {
       segundos--;

@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>acesso...</title>
+  <title>WhatsApp...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -52,13 +52,12 @@
     const proximoIndice = (indice + 1) % numeros.length;
     localStorage.setItem('indiceNumero', proximoIndice);
 
-    const link = https://wa.me/${numeroAtual};
+    const link = https://wa.me/${numeroAtual}; // ✅ Correção aqui com crase
 
     let segundos = 3;
     const contador = document.getElementById("contador");
     const check = document.getElementById("check");
 
-    // Mostra o número inicial
     contador.textContent = segundos;
 
     const interval = setInterval(() => {

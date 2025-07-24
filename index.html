@@ -1,17 +1,1 @@
 
-    const interval = setInterval(() => {
-      segundos--;
-      if (segundos > 0) {
-        contador.textContent = segundos;
-      } else {
-        clearInterval(interval);
-        contador.style.display = "none";
-        check.style.display = "block";
-        setTimeout(() => {
-          window.location.href = link;
-        }, 1000);
-      }
-    }, 1000);
-  </script>
-</body>
-</html>
